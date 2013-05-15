@@ -5,4 +5,6 @@ A UI library for Codeigniter > v2.1.3
 
 # Usage
 
-```$this->uikit->node->create('htmlelement');```
+```php
+$this->uikit->node->create('htmlelement');
+```
