@@ -1,6 +1,6 @@
 <?php
 
-	abstract class ul {
+	abstract class ul implements UIKit_HTMLElement {
 
 		static protected $type = 'ul';
 

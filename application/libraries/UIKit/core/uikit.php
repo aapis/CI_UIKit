@@ -1,5 +1,7 @@
 <?php
 	include('node.php');
+	include('interfaces/HTMLElement.php');
+	
 	include(APPPATH.'/libraries/UIKit/form.php');
 	include(APPPATH.'/libraries/UIKit/ul.php');
 
