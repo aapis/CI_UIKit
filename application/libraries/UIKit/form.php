@@ -5,8 +5,6 @@
 		static protected $type = 'form';
 
 		static public function create($attributes = array()){
-			self::_register();
-			
 			return self::$type;
 		}
 
@@ -18,10 +16,6 @@
 
 		static public function getType(){
 			return self::$type;
-		}
-
-		static private function _register(){
-
 		}
 
 	}

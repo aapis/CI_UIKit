@@ -3,7 +3,7 @@
 	//creates the elements
 	class Region implements UIK_Object {
 
-		protected $nodes = array();
+		protected $regions = array();
 
 		static protected $instance = null;
 
@@ -15,18 +15,18 @@
 			}
 		}
 
-		//remove item from $nodes array by index
+		//remove item from $regions array by index
 		public function destroy($node_id = 0){
 
 		}
 
-		//clean the $nodes array
+		//clean the $regions array
 		public function flush(){
 
 		}
 
 		public function getRegistered(){
-			
+			return $this->regions;
 		}
 
 		public function edit($node_id = 0){

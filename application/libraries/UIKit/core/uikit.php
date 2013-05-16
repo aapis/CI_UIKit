@@ -1,6 +1,6 @@
 <?php
 	include('interfaces/HTMLElement.php');
-	include('interfaces/KitObject.php');
+	include('interfaces/Object.php');
 
 	include('node.php');
 	include('region.php');

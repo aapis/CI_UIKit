@@ -9,7 +9,10 @@
 
 		public function create($type = null, $attributes = array()){
 			if(class_exists($type)){
-				return $type::create($attributes, $nodes);
+				//register the type
+				$this->nodes[] = $type;
+
+				return $type::create($attributes);
 			}else {
 				show_error(sprintf('UIKIT ERROR: class <strong>%s</strong> not found.', $type));
 			}
