@@ -1,10 +1,12 @@
 <?php
 	
-	abstract class form implements UIKit_HTMLElement {
+	abstract class form implements UIK_HTMLElement {
 
 		static protected $type = 'form';
 
 		static public function create($attributes = array()){
+			self::_register();
+			
 			return self::$type;
 		}
 
@@ -13,6 +15,15 @@
 				return $attributes;
 			}
 		}
+
+		static public function getType(){
+			return self::$type;
+		}
+
+		static private function _register(){
+
+		}
+
 	}
 
 ?>

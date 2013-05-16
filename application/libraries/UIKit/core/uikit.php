@@ -48,7 +48,11 @@
 		}
 
 		private function _getRegistered(){
+			$retVal = new stdClass;
+			$retVal->nodes = $this->node->getRegistered();
+			$retVal->regions = $this->region->getRegistered();
 
+			return $retVal;
 		}
 	}
 

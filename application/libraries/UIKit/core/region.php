@@ -1,7 +1,7 @@
 <?php
 	
 	//creates the elements
-	class Region implements KitObject {
+	class Region implements UIK_Object {
 
 		protected $nodes = array();
 
@@ -23,6 +23,10 @@
 		//clean the $nodes array
 		public function flush(){
 
+		}
+
+		public function getRegistered(){
+			
 		}
 
 		public function edit($node_id = 0){

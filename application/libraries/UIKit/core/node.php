@@ -1,7 +1,7 @@
 <?php
 
 	//creates the elements
-	class Node implements KitObject {
+	class Node implements UIK_Object {
 
 		protected $nodes = array();
 
@@ -9,7 +9,7 @@
 
 		public function create($type = null, $attributes = array()){
 			if(class_exists($type)){
-				return $type::create($attributes);
+				return $type::create($attributes, $nodes);
 			}else {
 				show_error(sprintf('UIKIT ERROR: class <strong>%s</strong> not found.', $type));
 			}
@@ -23,6 +23,10 @@
 		//clean the $nodes array
 		public function flush(){
 
+		}
+
+		public function getRegistered(){
+			return $this->nodes;
 		}
 
 		public function edit($node_id = 0){
