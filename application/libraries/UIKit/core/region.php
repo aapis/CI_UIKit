@@ -1,7 +1,7 @@
 <?php
-
+	
 	//creates the elements
-	class Node implements KitObject {
+	class Region implements KitObject {
 
 		protected $nodes = array();
 
@@ -31,7 +31,7 @@
 
 		public function getInstance(){
 			if(is_null(self::$instance)){
-				self::$instance = new Node;
+				self::$instance = new Region;
 			}
 
 			return self::$instance;

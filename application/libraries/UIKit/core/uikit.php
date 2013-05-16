@@ -1,14 +1,19 @@
 <?php
-	include('node.php');
 	include('interfaces/HTMLElement.php');
+	include('interfaces/KitObject.php');
+
+	include('node.php');
+	include('region.php');
 	
 	include(APPPATH.'/libraries/UIKit/form.php');
-	include(APPPATH.'/libraries/UIKit/ul.php');
+	include(APPPATH.'/libraries/UIKit/ul.php');	
 
 	//returns information about the elements created in the library
 	class UIKit {
 		protected $version_min = '2.1.3';
-		public $node = null;
+		protected $node = null;
+
+		private $_version = '1.0.0';
 
 		public function __construct(){
 			//Only tested on 2.1.3, so that's all we'll allow for now
@@ -17,6 +22,33 @@
 			}
 
 			$this->node = Node::getInstance();
+
+			$this->region = Region::getInstance();
+		}
+
+		public function createElement($type = null, $attributes = array()){
+			if(false === is_null($type)){
+				return $this->node->create($type, $attributes);
+			}
+		}
+
+		public function createRegion($attributes = array()){
+			if(sizeof($attributes) > 0){
+				return $this->region->create($attributes);
+			}
+		}
+
+		public function getInfo(){
+			$output = new stdClass;
+
+			$output->version = $this->_version;
+			$output->registered = $this->_getRegistered();
+
+			return $output;
+		}
+
+		private function _getRegistered(){
+
 		}
 	}
 

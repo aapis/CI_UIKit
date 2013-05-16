@@ -19,7 +19,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		var_dump($this->uikit->node->create('ul'));
+		var_dump($this->uikit->createElement('ul'));
 		$this->load->view('welcome_message');
 	}
 }
