@@ -20,12 +20,15 @@
 
 		//remove item from $nodes array by index
 		public function destroy($node_id = 0){
-
+			//loop nodes, if node_id == $key unset that
 		}
 
 		//clean the $nodes array
 		public function flush(){
+			if(sizeof($this->nodes) > 0)
+				$this->nodes = array();
 
+			return $this->nodes;
 		}
 
 		public function getRegistered(){

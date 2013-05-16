@@ -1,10 +1,13 @@
 <?php
+	//import interfaces
 	include('interfaces/HTMLElement.php');
 	include('interfaces/Object.php');
 
+	//import standard types
 	include('node.php');
 	include('region.php');
 	
+	//import element classes
 	include(APPPATH.'/libraries/UIKit/form.php');
 	include(APPPATH.'/libraries/UIKit/ul.php');	
 

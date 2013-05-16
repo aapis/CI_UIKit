@@ -5,7 +5,7 @@
 		static protected $type = 'form';
 
 		static public function create($attributes = array()){
-			return self::$type;
+			
 		}
 
 		static public function processAttributes($attributes = null){
