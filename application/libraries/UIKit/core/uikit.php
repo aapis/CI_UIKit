@@ -6,6 +6,7 @@
 	//import standard types
 	include('node.php');
 	include('region.php');
+	include('HTMLObject.php');
 	
 	//import element classes
 	include(APPPATH.'/libraries/UIKit/form.php');
@@ -29,10 +30,12 @@
 			$this->region = Region::getInstance();
 		}
 
-		public function createElement($type = null, $attributes = array()){
+		public function createElement($type = null, $data = null, $attributes = array()){
 			if(false === is_null($type)){
-				return $this->node->create($type, $attributes);
+				return $this->node->create($type, $data, $attributes);
 			}
+
+			return show_error('Cannot create an element of null type.');
 		}
 
 		public function createRegion($attributes = array()){

@@ -19,7 +19,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->uikit->createElement('form');
+		var_dump($this->uikit->createElement('form', 'I am some text', array('class' => 'dood')));
+		var_dump($this->uikit->createElement('form', 'I am some textdsfsd', array('class' => 'dood', 'id' => 'oranges')));
 		var_dump($this->uikit->getInfo());
 		$this->load->view('welcome_message');
 	}

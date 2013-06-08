@@ -7,7 +7,7 @@
 
 		static protected $instance = null;
 
-		public function create($type = null, $attributes = array()){
+		public function create($type = null, $data = null, $attributes = array()){
 			if(class_exists($type)){
 				return $type::create($attributes);
 			}else {
@@ -23,6 +23,10 @@
 		//clean the $regions array
 		public function flush(){
 
+		}
+
+		public function getClass(){
+			
 		}
 
 		public function getRegistered(){

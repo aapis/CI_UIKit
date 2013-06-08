@@ -7,14 +7,18 @@
 
 		static protected $instance = null;
 
-		public function create($type = null, $attributes = array()){
-			if(class_exists($type)){
-				//register the type
-				$this->nodes[] = $type;
+		public function create($type = null, $data = null, $attributes = array()){
+			$class = $this->getClass($type);
 
-				return $type::create($attributes);
+			if(class_exists($class)){
+				$instance = $class::getInstance();
+
+				//register the type
+				$this->nodes[] = $type;//.'#'.$instance->getHash();
+				
+				return $instance->create($data, $attributes);
 			}else {
-				show_error(sprintf('UIKIT ERROR: class <strong>%s</strong> not found.', $type));
+				show_error(sprintf('UIKIT ERROR: class <strong>%s</strong> not found.', $class));
 			}
 		}
 
@@ -29,6 +33,16 @@
 				$this->nodes = array();
 
 			return $this->nodes;
+		}
+
+		public function getClass($class = null, $prefix = 'HTMLObject'){
+			if(false === is_null($class)){
+				$class = ucfirst($class);	
+
+				return $prefix.$class;
+			}
+
+			return null;
 		}
 
 		public function getRegistered(){
